@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js" defer></script>
-    <link rel="icon" href="birthday-emoji-illustration_23-2151345552.avif" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">        
-        <button class="start">Показати привітання</button>
+    
+<div class="book-cover is-open">
+    <div class="deco">
+        <img src="deco-three.png" alt="deco" class="deco-three">
+
+        <h1 class="title">Happy <br> Birthday</h1>
+        <button class="open">Open book</button>
+    </div>    
+</div>
+<div class="book-wrapper">
+    <div class="page">
+        <img src="deco-one.png" alt="deco" class="page-deco-one">
+        <div class="line"></div>
+
+        <p class="text" id="text"></p>
+
+        <div class="line line-two"></div>
+        <div class="nav">
+            <button class="prev" id="prev">◀</button>
+            <div class="page-number" id="page">1 / 20</div>  
+            <button class="next" id="next">▶</button>
+        </div>
+        <audio id="bg-music" src="calm-nature-music-471361.mp3" loop></audio>
+        <audio id="final-music" src="happy-birthday-471211.mp3" loop></audio>
     </div>
+</div>
+
+<div class="back-drop">
+<div id="customAlert" class="alert">
+  <h2 id="alertTitle">Рекомендація</h2>
+  <p id="alertText">Увімкніть звук</p>
+  <button id="closeAlert">Закрити</button>
+</div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,58 +1,183 @@
 body {
-  background-color: #000;
-  background-image: url(./istockphoto-1483370535-612x612.jpg);
-  background-position: center;
+    margin:0;
+    font-family:'Playfair Display', serif;
+    background:#D8CAB8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.book-cover{
+  display: none;
+  height: 525px;
+  width: 350px;
+  padding: 12px;
+  background-color: rgb(161, 23, 23);
+  border-radius: 12px;
+}
+
+.deco{
+  height: 525px;
+  width: 350px;
+  background-color: rgb(161, 23, 23);
+  border: 2px dashed gold;
+  border-radius: 12px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+}
+
+.deco-three{
   margin: 0;
+  padding-top: 20px;  
 }
 
-.container {
-  margin: 0 auto;
-  width: 600px;
-  height: 300px;
-  background-color: rgba(255, 255, 255, 0.089);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.356);
-  box-shadow: 10px 10px 50px black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-.start {
-  padding: 16px 42px;
-  background-color: rgba(255, 255, 255, 0.911);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.562);
-  box-shadow: 10px 10px 50px black;
-}
-
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-  color: #ffeef0;
-  font-family: "Dancing Script", cursive;
-  font-size: 1.8em;
+.title{
+  color: gold;
   text-align: center;
-  -webkit-animation: text-shadow-drop-center 0.6s both;
-  animation: text-shadow-drop-center 0.6s both;
+  font-size: 72px;
+  margin-top: 24px;
 }
 
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+.open{
+  border: 1px solid gold;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 18px;
+  color: gold;
+  background-color: transparent;  
+}
+
+.open:hover{
+  cursor: pointer;
+}
+
+.book-wrapper{
+  display: none;
+  height: 525px;
+  width: 350px;
+  padding: 12px;
+  background-color: rgb(161, 23, 23);
+  border-radius: 12px;
+}
+
+.page {
+    height: 525px;
+    width: 350px;
+    background:#FDF5E6;
+    border:2px solid #D4CBB7;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    border-radius:12px;
+    padding:48px;
+    box-sizing:border-box;    
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-deco-one{
+  width: 60px;
+  height: 60px;
+}
+
+.line{
+  border-radius: 8px;
+  height: 2px;
+  width: 240px;
+  background-color: #D8CAB8;
+}
+
+.text{
+  color: #2e2e2e;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 72px;
+}
+
+#text {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.line-two{
+  position: absolute;
+  bottom: 82px;
+}
+
+.page-deco-three{
+  width: 80px;
+  height: 120px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.nav{
+  display: flex;
+  position: absolute;
+  bottom: 48px;
+  gap: 18px; 
+  align-items: center; 
 }
 
 
+.prev, .next{
+  background-color: transparent;
+  border: none;
+  color: #2e2e2e;
+  font-size: 16px;  
+}
+
+.prev:hover, .next:hover{
+  color: #776144;  
+  transition: color 0.6s ease;
+  cursor: pointer;
+}
+
+.page-number{
+  font-size: 20px;
+}
+
+.is-open{
+  display: block;
+}
+
+.back-drop{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.733);
+}
+
+
+.alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  width: 280px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.alert h2 {
+  margin-bottom: 10px;
+  color: #a11717;
+}
+
+.alert button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  background: #a11717;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
