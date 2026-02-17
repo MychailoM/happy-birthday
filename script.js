@@ -51,24 +51,30 @@ open.addEventListener('click', () => {
     bgMusic.play();
 })
 
+let fadeInterval = null;
+let vol = 0.2;
+
 function showText(){
     textEl.style.opacity = 0;
     setTimeout(()=>{
         textEl.textContent = texts[current];
         textEl.style.opacity = 1;
         pageEl.textContent = `${current+1} / ${texts.length}`;
-        if(current === texts.length - 1){
+        if (music.paused) {
             music.play();
-            bgMusic.pause();
-            bgMusic.currentTime = 0;
-        } else {
-            bgMusic.volume = 0.6;
-            bgMusic.play();
-            music.pause();
-            music.currentTime = 0;
-        }
+            fadeInterval = setInterval(() => {
+                vol += 0.003;
+                if (vol >= 1) {
+                    vol = 1;
+                    clearInterval(fadeInterval);
+                }
+                music.volume = vol;
+            }, 100);
+          }
     }, 300);
 }
+
+
 
 document.getElementById('next').addEventListener('click',()=>{
     if(current < texts.length-1){ current++; showText(); }
